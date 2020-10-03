@@ -1,8 +1,7 @@
 use serde::{Deserialize, Serialize};
-use serde_json::{Result, Value};
+use serde_json;
 use actix_web::{
     get,
-    web,
     HttpResponse,
     client
 };

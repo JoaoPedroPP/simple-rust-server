@@ -12,7 +12,8 @@ pub struct Groot{
 }
 
 #[get("/api/groot")]
-pub async fn groot(web::Query(params): web::Query<Groot>) -> HttpResponse {
+pub async fn groot(web::Query(_params): web::Query<Groot>) -> HttpResponse {
+    println!("Params received {:?}",_params.text);
     let client = client::Client::default();
     let req = client.get("https://jsonplaceholder.typicode.com/todos/1")
         .header("User-Agent", "Actix-web")
